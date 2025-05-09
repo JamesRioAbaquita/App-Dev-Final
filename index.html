@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuripot Chronicles - Budget Tracker for Students</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#508A75',
+                        'light-green': '#DDEAD8',
+                        'pig-pink': '#FEBFAB',
+                        'notebook-yellow': '#FED893',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="kuripot-gradient text-white py-20 px-6 lg:px-8 relative">
+        <!-- Financial elements container for hero section -->
+        <div class="finance-elements-container hero-finance-elements" id="hero-finance-elements"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <!-- Hero Content -->
+                <div class="text-left lg:w-1/2 mb-10 lg:mb-0 reveal-slide-up">
+                    <h1 class="hero-title animate-fadeInUp" data-text="Kuripot Chronicles">Kuripot Chronicles</h1>
+                    <p class="hero-subtitle animate-fadeInUp delay-100">Ang Diary ng Kuripot na Estudyante</p>
+                    <p class="hero-description animate-fadeInUp delay-200">
+                        Take control of your finances as a student with our simple yet powerful budget tracking app
+                        designed specifically for your needs and lifestyle.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fadeInUp delay-300">
+                        <a href="./KuripotChronicles.apk" class="hero-button btn-primary">
+                            <i class="fas fa-download mr-2"></i> Download APK
+                        </a>
+                        <a href="./Kuripot Chronicles.pdf" target="_blank" class="hero-button btn-secondary">
+                            <i class="fas fa-book mr-2"></i> View User Manual
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- App Logo -->
+                <div class="lg:w-1/2 flex justify-center lg:justify-end">
+                    <div class="img-reveal logo-container logo-float animate-zoomIn relative">
+                        <img src="Logo.png" alt="Kuripot Chronicles Logo" class="w-full h-full object-cover">
+                        
+                        <!-- Fallback if image doesn't load -->
+                        <div class="w-full h-full flex flex-col items-center justify-center bg-pig-pink absolute top-0 left-0 opacity-0 img-fallback">
+                            <i class="fas fa-piggy-bank text-primary text-6xl mb-4"></i>
+                            <p class="text-primary font-bold text-xl">Kuripot Chronicles</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Add 3D coins around the logo -->
+                    <div class="coin-ring-container absolute">
+                        <div class="coin-1 financial-element coin"></div>
+                        <div class="coin-2 financial-element coin"></div>
+                        <div class="coin-3 financial-element coin"></div>
+                        <div class="coin-4 financial-element coin"></div>
+                        <div class="coin-5 financial-element coin"></div>
+                        <div class="bill-1 financial-element bill">100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the App Section -->
+    <section class="py-20 px-6 lg:px-8 bg-white relative">
+        <!-- Financial elements for this section -->
+        <div class="finance-elements-container" id="about-finance-elements"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Title with Horizontal Line -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">About Kuripot Chronicles</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-5"></div>
+                <p class="section-description fixed-text text-gray-600 text-lg max-w-3xl mx-auto">
+                    Your financial companion designed specifically for students
+                </p>
+            </div>
+            
+            <!-- Feature Cards -->
+            <div class="grid md:grid-cols-3 gap-10 feature-sequence relative">
+                <!-- Budget Tracking Feature -->
+                <div class="feature-item text-center">
+                    <div class="feature-icon-circle mx-auto mb-6">
+                        <i class="fas fa-wallet text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Budget Tracking</h3>
+                    <p class="text-gray-600">Keep track of your daily expenses and income with our intuitive and easy-to-use interface.</p>
+                </div>
+                
+                <!-- Daily Tips Feature -->
+                <div class="feature-item text-center">
+                    <div class="feature-icon-circle mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Daily Tips</h3>
+                    <p class="text-gray-600">Get personalized money-saving tips and tricks to help you achieve your financial goals.</p>
+                </div>
+                
+                <!-- Savings Progress Feature -->
+                <div class="feature-item text-center">
+                    <div class="feature-icon-circle mx-auto mb-6">
+                        <i class="fas fa-chart-line text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Savings Progress</h3>
+                    <p class="text-gray-600">Visualize your savings progress and stay motivated to reach your financial milestones.</p>
+                </div>
+                
+                <!-- Add savings jar near the savings progress feature -->
+                <div class="financial-element savings-jar absolute right-0 bottom-0"></div>
+                <!-- Add a calculator near budget tracking -->
+                <div class="financial-element calculator absolute left-0 top-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Preview Section without the problematic divider -->
+    <section class="py-20 px-6 lg:px-8 bg-light-green relative" style="margin-top: -1px;">
+        <!-- Financial elements for this section -->
+        <div class="finance-elements-container" id="preview-finance-elements"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Title with Horizontal Line -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">App Preview</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-5"></div>
+                <p class="section-description fixed-text text-gray-600 text-lg max-w-3xl mx-auto">
+                    See what makes Kuripot Chronicles special
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-16 feature-sequence">
+                <!-- Expense Analytics Screenshot -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift relative">
+                    <div class="aspect-[9/16] bg-pig-pink/10 rounded-lg flex items-center justify-center screenshot-container overflow-hidden">
+                        <!-- This will be replaced with Expenses.jpg by JavaScript -->
+                        <div class="text-center p-4 placeholder-content">
+                            <i class="fas fa-chart-pie text-4xl text-primary mb-2"></i>
+                            <p class="text-primary font-medium">Expense Analytics</p>
+                            <p class="text-gray-500 text-sm mt-2">Visualize your spending patterns</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <h3 class="text-primary font-semibold">Expense Tracking</h3>
+                        <p class="text-gray-600 text-sm">See exactly where your money goes</p>
+                    </div>
+                </div>
+                
+                <!-- Budget Planner Screenshot -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <div class="aspect-[9/16] bg-notebook-yellow/10 rounded-lg flex items-center justify-center screenshot-container overflow-hidden">
+                        <!-- This will be replaced with Budget.jpg by JavaScript -->
+                        <div class="text-center p-4">
+                            <i class="fas fa-money-bill-wave text-4xl text-primary mb-2"></i>
+                            <p class="text-primary font-medium">Budget Planner</p>
+                            <p class="text-gray-500 text-sm mt-2">Plan your finances ahead of time</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <h3 class="text-primary font-semibold">Smart Budgeting</h3>
+                        <p class="text-gray-600 text-sm">Plan and stay within your budget</p>
+                    </div>
+                </div>
+                
+                <!-- Dashboard View Screenshot -->
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <div class="aspect-[9/16] bg-pig-pink/10 rounded-lg flex items-center justify-center screenshot-container overflow-hidden">
+                        <!-- This will be replaced with Dashboard.jpg by JavaScript -->
+                        <div class="text-center p-4">
+                            <i class="fas fa-mobile-screen-button text-4xl text-primary mb-2"></i>
+                            <p class="text-primary font-medium">Dashboard View</p>
+                            <p class="text-gray-500 text-sm mt-2">Monitor everything at a glance</p>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-center">
+                        <h3 class="text-primary font-semibold">Complete Overview</h3>
+                        <p class="text-gray-600 text-sm">Track all your finances in one place</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section without the problematic divider -->
+    <section class="py-20 px-6 lg:px-8 bg-white relative" style="margin-top: -1px;">
+        <!-- Add a rain of coins in the background -->
+        <div class="coin-rain-container" id="coin-rain-container"></div>
+        
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-3">Ready to Take Control of Your Finances?</h2>
+            <div class="w-24 h-1 bg-primary mx-auto mb-5"></div>
+            <p class="cta-description fixed-text text-gray-600 text-lg max-w-3xl mx-auto mb-10">
+                Join thousands of students who are already saving more and spending wisely with Kuripot Chronicles.
+            </p>
+            <div class="reveal-scale relative">
+                <!-- Add floating coins around the CTA button -->
+                <div class="financial-element coin absolute -top-10 -left-10"></div>
+                <div class="financial-element coin absolute -bottom-10 -right-10"></div>
+                <div class="financial-element bill absolute top-0 right-5">200</div>
+                <a href="./KuripotChronicles.apk" class="cta-button pulse-animation">
+                    <i class="fas fa-download mr-2"></i> Download Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer class="py-12 px-6 lg:px-8 footer-gradient text-white relative" style="margin-top: -1px;">
+        <!-- Financial elements for footer -->
+        <div class="finance-elements-container" id="footer-finance-elements"></div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <!-- Logo and Tagline -->
+                <div class="mb-6 md:mb-0 text-center md:text-left reveal-slide-up">
+                    <div class="flex items-center justify-center md:justify-start mb-2">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mr-3 overflow-hidden">
+                            <img src="Logo.png" alt="Kuripot Chronicles Logo" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold">Kuripot Chronicles</h3>
+                    </div>
+                    <p class="text-white/80">Ang Diary ng Kuripot na Estudyante</p>
+                </div>
+                
+                <!-- Contact Links -->
+                <div class="flex flex-col sm:flex-row gap-6 reveal-fade">
+                    <a href="mailto:contact@kuripotchronicles.com" class="hover:text-light-green transition-colors duration-300 flex items-center">
+                        <i class="fas fa-envelope text-xl mr-2"></i>
+                        <span>contact@kuripotchronicles.com</span>
+                    </a>
+                    <a href="https://github.com/kuripot-chronicles" class="hover:text-light-green transition-colors duration-300 flex items-center">
+                        <i class="fab fa-github text-xl mr-2"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+            
+            <hr class="border-white/20 mb-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/80 mb-4 md:mb-0">&copy; <span id="current-year">2023</span> Kuripot Chronicles. All rights reserved.</p>
+                
+                <!-- Social Links -->
+                <div class="flex gap-4 reveal-slide-up">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html> 
